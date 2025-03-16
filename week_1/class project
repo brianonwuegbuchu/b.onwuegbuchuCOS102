@@ -1,0 +1,41 @@
+def simple_interest(P, R, T):
+    return P * (1 + (R / 100) * T)
+
+def compound_interest(P, R, n, t):
+    return P * (1 + (R / n)) ** (n * t)
+
+def annuity_plan(PMT, R, n, t):
+    return PMT * ((1 + (R / n)) ** (n * t) - 1) / (R / n)
+
+def main():
+    print("Choose a calculation:")
+    print("1. Simple Interest")
+    print("2. Compound Interest")
+    print("3. Annuity Plan")
+    choice = int(input("Enter your choice (1-3): "))
+    
+    if choice == 1:
+        P = float(input("Enter principal amount: "))
+        R = float(input("Enter annual interest rate (%): "))
+        T = float(input("Enter time in years: "))
+        print(f"Simple Interest Amount: {simple_interest(P, R, T):.2f}")
+    
+    elif choice == 2:
+        P = float(input("Enter principal amount: "))
+        R = float(input("Enter annual interest rate (%): ")) / 100
+        n = int(input("Enter number of times interest is compounded per year: "))
+        t = float(input("Enter time in years: "))
+        print(f"Compound Interest Amount: {compound_interest(P, R, n, t):.2f}")
+    
+    elif choice == 3:
+        PMT = float(input("Enter periodic payment amount: "))
+        R = float(input("Enter annual interest rate (%): ")) / 100
+        n = int(input("Enter number of payments per year: "))
+        t = float(input("Enter total years: "))
+        print(f"Annuity Plan Amount: {annuity_plan(PMT, R, n, t):.2f}")
+    
+    else:
+        print("Invalid choice! Please select 1, 2, or 3.")
+
+if __name__ == "__main__":
+    main()
