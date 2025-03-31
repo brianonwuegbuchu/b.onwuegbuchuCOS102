@@ -1,0 +1,85 @@
+import sympy as sp
+
+
+def solve_quadratic():
+    try:
+        a = float(input("Enter coefficient A (must not be 0): "))
+        if a == 0:
+            print("Coefficient A cannot be zero for a quadratic equation.")
+            return
+        b = float(input("Enter coefficient B: "))
+        c = float(input("Enter coefficient C: "))
+
+        x = sp.Symbol('x')
+        equation = a*x**2 + b*x + c
+        roots = sp.solve(equation, x)
+
+        print(f"Quadratic equation roots: {roots}")
+    except ValueError:
+        print("Invalid input. Please enter numerical values.")
+
+
+def solve_cubic():
+    try:
+        a = float(input("Enter coefficient A (must not be 0): "))
+        if a == 0:
+            print("Coefficient A cannot be zero for a cubic equation.")
+            return
+        b = float(input("Enter coefficient B: "))
+        c = float(input("Enter coefficient C: "))
+        d = float(input("Enter coefficient D: "))
+
+        x = sp.Symbol('x')
+        equation = a*x**3 + b*x**2 + c*x + d
+        roots = sp.solve(equation, x)
+
+        print(f"Cubic equation roots: {roots}")
+    except ValueError:
+        print("Invalid input. Please enter numerical values.")
+
+
+def solve_quartic():
+    try:
+        a = float(input("Enter coefficient A (must not be 0): "))
+        if a == 0:
+            print("Coefficient A cannot be zero for a quartic equation.")
+            return
+        b = float(input("Enter coefficient B: "))
+        c = float(input("Enter coefficient C: "))
+        d = float(input("Enter coefficient D: "))
+        e = float(input("Enter coefficient E: "))
+
+        x = sp.Symbol('x')
+        equation = a*x**4 + b*x**3 + c*x**2 + d*x + e
+        roots = sp.solve(equation, x)
+
+        print(f"Quartic equation roots: {roots}")
+    except ValueError:
+        print("Invalid input. Please enter numerical values.")
+
+
+def main():
+    while True:
+        print("\nChoose the type of equation to solve:")
+        print("1. Quadratic Equation (Ax² + Bx + C = 0)")
+        print("2. Cubic Equation (Ax³ + Bx² + Cx + D = 0)")
+        print("3. Quartic Equation (Ax⁴ + Bx³ + Cx² + Dx + E = 0)")
+        print("4. Exit")
+
+        choice = input("Enter 1, 2, 3, or 4: ")
+
+        if choice == '1':
+            solve_quadratic()
+        elif choice == '2':
+            solve_cubic()
+        elif choice == '3':
+            solve_quartic()
+        elif choice == '4':
+            print("Exiting program. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter 1, 2, 3, or 4.")
+
+
+if __name__ == "__main__":
+    main()

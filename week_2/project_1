@@ -1,0 +1,59 @@
+# 1.) Develop the pseudocode and flowchart for store checkout after purchase
+
+def store_checkout():
+    total = 0
+    tax_rate = 0.07  # Example: 7% tax
+
+    while True:
+        price = input("Enter item price (or type 'done' to finish): ")
+        if price.lower() == "done":
+            break
+        total += float(price)
+
+    tax = total * tax_rate
+    final_amount = total + tax
+
+    print(f"\nSubtotal: ${total:.2f}")
+    print(f"Tax (7%): ${tax:.2f}")
+    print(f"Total Amount: ${final_amount:.2f}")
+
+
+store_checkout()
+
+
+# 2.) Design a flowchart for your typical weekday morning routine.
+def morning_routine():
+    tasks = [
+        "Wake up",
+        "Brush teeth",
+        "Take a shower",
+        "Get dressed",
+        "Have breakfast",
+        "Check phone/emails",
+        "Leave for work/school"
+    ]
+
+    for step, task in enumerate(tasks, 1):
+        print(f"{step}. {task}")
+
+
+morning_routine()
+
+
+# 3.) Develop an algorithm that takes as input two names and  their corresponding age and then swap the ages.
+def swap_ages():
+    name1 = input("Enter first person's name: ")
+    age1 = int(input(f"Enter {name1}'s age: "))
+
+    name2 = input("Enter second person's name: ")
+    age2 = int(input(f"Enter {name2}'s age: "))
+
+    # Swapping ages
+    age1, age2 = age2, age1
+
+    print(f"\nAfter swapping:")
+    print(f"{name1} is now {age1} years old.")
+    print(f"{name2} is now {age2} years old.")
+
+
+swap_ages()
