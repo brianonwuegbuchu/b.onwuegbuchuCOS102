@@ -1,0 +1,8 @@
+def printme(str):
+    # This is a proint function
+    print(str)
+    return
+
+
+printme("I'm first call to user define function!")
+printme("Again second call to the same function")
